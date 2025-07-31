@@ -46,4 +46,25 @@ function App() {
       setSaving(false);
     }
   }
+
+  const increaseFear = () => {
+    const newFear = fear + 1;
+    setFear(newFear);
+    saveFear(newFear);
+  };
+
+  const decreaseFear = () => {
+    const newFear = Math.max(0, fear - 1);
+    setFear(newFear);
+    saveFear(newFear);
+  };
+
+  const resetFear = () => {
+    setFear(0);
+    saveFear(0);
+  };
+
+  const renderSkulls = () => {
+    return '💀'.repeat(fear);
+  };
 }

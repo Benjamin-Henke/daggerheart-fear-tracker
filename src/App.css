@@ -1,0 +1,149 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827 0%, #581c87 50%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.fear-tracker {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #c084fc;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  margin-top: 0;
+}
+
+.fear-display {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fear-number {
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: #d8b4fe;
+  margin-bottom: 1rem;
+}
+
+.skulls {
+  font-size: 2.25rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-btn {
+  background-color: #7c3aed;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:hover:not(:disabled) {
+  background-color: #6d28d9;
+  transform: scale(1.05);
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-container {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  background-color: #4b5563;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.reset-btn:hover:not(:disabled) {
+  background-color: #374151;
+  transform: scale(1.05);
+}
+
+.reset-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.instructions {
+  margin-top: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.saving-indicator {
+  color: #fbbf24;
+  margin-top: 0.25rem;
+}
+
+.loading-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827 0%, #581c87 50%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-content {
+  color: #c084fc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  font-size: 2rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

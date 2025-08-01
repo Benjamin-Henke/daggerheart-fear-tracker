@@ -99,7 +99,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="fear-tracker">
-        <h1 className="title">FEAR TRACKER</h1>
+        <h1 className="title">FEAR</h1>
 
         <div className="fear-display">
           {fear >= 12 && <div className="max-fear-warning">MAX FEAR REACHED!</div>}
@@ -142,11 +142,6 @@ function App() {
             </svg>
             {saving ? 'Saving...' : 'Reset'}
           </button>
-        </div>
-
-        <div className="instructions">
-          Click + to increase Fear, - to decrease
-          {saving && <div className="saving-indicator">Saving to database...</div>}
         </div>
       </div>
     </div>

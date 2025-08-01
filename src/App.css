@@ -40,6 +40,19 @@
   margin-bottom: 1rem;
 }
 
+.max-fear-warning {
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 .skulls {
   font-size: 2.25rem;
   min-height: 60px;

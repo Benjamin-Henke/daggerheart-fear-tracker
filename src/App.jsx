@@ -14,7 +14,7 @@ function App() {
 
   const loadFear = async () => {
     try {
-      const { data, error } = await supabase.from('fear-tracker')
+      const { data, error } = await supabase.from('fear_tracker')
         .select('fear_value')
         .eq('id', 1)
         .single();
@@ -53,6 +53,10 @@ function App() {
   };
 
   const increaseFear = () => {
+    // via rules, GM can only have max of 12
+    if (fear === 12) {
+      return
+    }
     const newFear = fear + 1;
     setFear(newFear);
     saveFear(newFear);
@@ -91,6 +95,7 @@ function App() {
 
         <div className="fear-display">
           <div className="fear-number">{fear}</div>
+          {fear >= 12 && <div className="max-fear-warning">MAX FEAR REACHED!</div>}
           <div className="skulls">{renderSkulls()}</div>
         </div>
 
@@ -108,7 +113,7 @@ function App() {
           <button
             onClick={increaseFear}
             className="control-btn increase"
-            disabled={saving}
+            disabled={saving | fear >= 12}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14m-7-7h14"/>

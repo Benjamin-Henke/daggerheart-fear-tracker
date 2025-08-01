@@ -10,16 +10,33 @@
 .dashboard {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px; /* Prevent it from getting too wide on large screens */
   align-items: flex-start;
 }
 
+/* Set the flex proportions */
+.dashboard > *:first-child {
+  flex: 1; /* FearTracker takes 1/3 */
+  min-width: 300px; /* Minimum width so it doesn't get too small */
+}
+
+.dashboard > *:nth-child(2) {
+  flex: 2; /* PlayerStats takes 2/3 */
+  min-width: 600px; /* Minimum width for PlayerStats */
+}
+
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dashboard {
     flex-direction: column;
     align-items: center;
   }
-}
 
-/* 452248 */
+  .dashboard > *:first-child,
+  .dashboard > *:nth-child(2) {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+  }
+}

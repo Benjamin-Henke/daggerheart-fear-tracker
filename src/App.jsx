@@ -1,5 +1,6 @@
 import React from 'react';
 import FearTracker from './components/FearTracker/FearTracker'
+import PlayerStats from './components/PlayerStats/PlayerStats'
 import './App.css'
 
 function App() {
@@ -7,8 +8,7 @@ function App() {
     <div className="app-container">
       <div className="dashboard">
         <FearTracker />
-        {/* Add your next component here */}
-        {/* <YourNextComponent /> */}
+        <PlayerStats />
       </div>
     </div>
   );

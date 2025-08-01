@@ -74,7 +74,15 @@ function App() {
   };
 
   const renderSkulls = () => {
-    return '💀'.repeat(fear);
+    const skulls = [];
+    for (let i = 0; i < 12; i++) {
+      skulls.push(
+        <span key={i} className={`skull ${i < fear ? 'active' : 'inactive'}`}>
+          💀
+        </span>
+      );
+    }
+    return skulls;
   };
 
   if (loading) {
@@ -94,7 +102,6 @@ function App() {
         <h1 className="title">FEAR TRACKER</h1>
 
         <div className="fear-display">
-          <div className="fear-number">{fear}</div>
           {fear >= 12 && <div className="max-fear-warning">MAX FEAR REACHED!</div>}
           <div className="skulls">{renderSkulls()}</div>
         </div>

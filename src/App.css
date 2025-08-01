@@ -55,11 +55,26 @@
 
 .skulls {
   font-size: 2.25rem;
-  min-height: 60px;
-  display: flex;
+  min-height: 180px; /* Adjust as needed */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.skull {
+  transition: opacity 0.3s ease;
+}
+
+.skull.active {
+  opacity: 1;
+}
+
+.skull.inactive {
+  opacity: 0.3;
 }
 
 .controls {
